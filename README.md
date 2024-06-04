@@ -6,8 +6,8 @@ This project is an implementation of an assembler for a simple hypothetical comp
 
 - **Registers:** 
   - 32 registers, named $0 to $31.
-  - Each register is 32 bytes in size.
-  - The least significant byte is 0, and the most significant byte is 31.
+  - Each register is 32 bits in size.
+  - The least significant bit is 0, and the most significant bit is 31.
 
 - **Memory:**
   - The memory size is (2^25) bytes.
@@ -27,7 +27,7 @@ The instruction set is divided into three types:
 2. **I-type Instructions:**
    - One operand is a constant (immediate number).
    - Arithmetic and logical operations use the rs register and the immediate value, storing the result in the rt register.
-   - Equality instructions compare values in rs and rt registers, potentially jumping to a label if they are equal. The jump target is encoded in the immediate field, allowing jumps within a range of ±16 bytes.
+   - Equality instructions compare values in rs and rt registers, potentially jumping to a label if they are equal. The jump target is encoded in the immediate field, allowing jumps within a range of ±16 bits.
    - Load and save instructions handle data transfer between registers and memory, using the sum of rs and the immediate value as the memory address.
 
 3. **J-type Instructions:**
